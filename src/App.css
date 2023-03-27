@@ -1,38 +1,148 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: #020631; */
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 9%, rgba(5,103,183,1) 22%, rgba(0,212,255,1) 100%); */
+
+}
+::-webkit-scrollbar{
+  width: 0px;
+}
+.app {
+  /* position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%); */
+  --width: 20em;
+--height: 37rem;
+--hi-hover-rgb:8,136,178;
+--hi-hover:rgb(var(--hi-hover-rgb))
+--hi-primary: rgb(2, 0, 36);
+--hi-secondary: rgba(9, 21, 121, 1);
+--hi-accent: rgba(0, 212, 255, 1);
+--bg: white;
+--border-radius:2rem;
+--transition: 250ms ease-in-out;
+
+/* display: grid;
+grid-template-rows:
+min-content
+1fr
+min-content
+5rem; */
+
+
+height: var(--height);
+width: var(--width);
+border-radius: var(--border-radius);
+overflow: hidden;
+background: var(--hi-primary);
+background: linear-gradient(
+  90deg,
+  var(--hi-secondary) 0%,
+  var(--hi-secondary) 33.5%,
+  var(--hi-accent) 100%
+);
+box-shadow: 0.25rem 0.25rem 1rem 0 rgba(0,0,0,0.4);
+}
+
+.app .mainHeading h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app h1,
+h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:0.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app .input {
+  margin-top: 0.8em;
+  width: 19em;
+  height: 2em;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.app .input input {
+  width: 100%;
+  height: 1.6em;
+  border-color: transparent;
+  outline-color: transparent;
+}
+
+.app i {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 900;
+  color: grey;
+  margin-right: 5px;
+}
+.app .todos {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.app .todos .todo {
+  margin-top: 0.8em;
+  width: 19em;
+  height: 2em;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px;
+
+}
+.app .todos .todo .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 12rem;
+  margin-top: 1rem;
+  overflow: scroll;
+  
+
+
+}
+
+.app .todos .todo .left p {
+  margin-left: 3px;
+  font-size: medium;
+  font-weight: 700;
+  font-style: normal;
+  color: grey;
+}
+.fa-plus:hover{
+  color: blue;
+  transform: rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
+
+.fa-trash:hover{
+  color: red;
+  transform: rotate(-450deg);
+  transition: transform 1s ease-in-out;
+  font-size: 15px;
 }
