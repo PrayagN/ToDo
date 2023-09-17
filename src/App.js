@@ -3,7 +3,6 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 
-
 const getLocalStorage = () => {
   let todDos = localStorage.getItem("toDos");
   if (todDos) {
@@ -82,7 +81,7 @@ function App() {
   };
 
   return (
-    <div className="app main">
+    <div className="app main" style={{backgroundColor: "#015871"}}>
       <div className="mainHeading">
         <h1>ToDo List</h1>
       </div>
@@ -109,19 +108,24 @@ function App() {
                   checked={obj.status}
                   type="checkbox"
                 />
-                <p className=''
+                <p
                   style={{
                     textDecoration: obj.status ? "line-through" : "none",
                   }}
                 >
-                  <span style={{ color: obj.status ? "red" : "green",textDecorationColor:'red' }}>
+                  <span
+                    style={{
+                      color: obj.status ? "red" : "green",
+                      textDecorationColor: "red",
+                    }}
+                  >
                     {obj.text}
                   </span>
                 </p>
               </div>
               <div className="right">
                 <span style={{ paddingRight: "1rem" }}>{day.date}</span>
-                <i 
+                <i
                   className="fa fa-trash hi"
                   aria-hidden="true"
                   onClick={() => handleDelete(obj.id)}
